@@ -3,8 +3,10 @@ import WorkController from "../controllers/workController.js";
 
 const router = express.Router();
 
+router.use(express.json());
+
 router
-    .get("/work", WorkController.listarTrabalho)
-    .put("/work", WorkController.atualizarTrabalho)
+  .get("/api/work", WorkController.listarTrabalho)
+  .put("/api/work/:day", WorkController.atualizarTrabalho);
 
 export default router;
